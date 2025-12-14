@@ -1,0 +1,5 @@
+{
+  "name": "ResQ-AI Command",
+  "description": "Autonomous Disaster Response Orchestration System. Analyzes distress signals, automates triage via Kestra workflows, and dispatches resources using Oumi-finetuned models.",
+  "requestFramePermissions": []
+}
