@@ -59,7 +59,7 @@ graph TD
 *   **Simulated RAG**: Demonstrates how AI agents fetch "proprietary" protocol data (e.g., Chemical Spill procedures) to ground their decisions.
 *   **Production-Ready**: Configured for Vercel deployment with SPA rewriting.
 
-## 📦 How to Run
+## 📦 How to Run Locally
 
 1.  **Clone the repository**
 2.  **Install dependencies**:
@@ -75,6 +75,25 @@ graph TD
     ```bash
     npm start
     ```
+
+## ☁️ Deployment to Vercel
+
+Since this project is configured as a Single Page Application (SPA), it is ready for immediate deployment on Vercel.
+
+1.  **Install Vercel CLI**:
+    ```bash
+    npm i -g vercel
+    ```
+
+2.  **Deploy**:
+    Run the following command from the root directory and follow the prompts:
+    ```bash
+    vercel
+    ```
+
+3.  **Environment Variables**:
+    During the deployment setup, Vercel will ask for environment variables. Ensure you add your API key:
+    *   `API_KEY`: Your Google Gemini API Key.
 
 ## 🏆 Hackathon Tracks
 *   **AI Agents Assemble**: Full autonomous agent workflow.
