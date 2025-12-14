@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import { SYSTEM_INSTRUCTION } from '../constants';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
 
 /**
  * Step 1: Summarize Raw Data from External Systems
@@ -28,7 +28,7 @@ export const summarizeTelemetry = async (rawTelemetry: string): Promise<string> 
       model: 'gemini-2.5-flash',
       contents: prompt,
     });
-    
+
     return response.text || "Data stream inconclusive.";
   } catch (error) {
     console.error("Summarization failed:", error);
@@ -71,10 +71,10 @@ export const analyzeIncident = async (summary: string, protocol: string) => {
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         responseMimeType: 'application/json',
-        temperature: 0.2, 
+        temperature: 0.2,
       },
     });
-    
+
     return JSON.parse(response.text || '{}');
   } catch (error) {
     console.error("ResQ-AI Analysis Failed:", error);
